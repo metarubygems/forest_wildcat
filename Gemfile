@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', github: 'rails', branch: '4-2-stable'
+gem 'rails', '~> 4.2.0.rc'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder'
 gem 'rack-cors', require: 'rack/cors'
