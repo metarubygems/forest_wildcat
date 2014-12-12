@@ -32,7 +32,7 @@ set :repo_url, ENV['CAP_REPO_URL']
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
 # Default value for keep_releases is 5
-# set :keep_releases, 5
+set :keep_releases, 5
 
 namespace :deploy do
 
