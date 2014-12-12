@@ -9,9 +9,10 @@ gem 'thin'
 
 group :development do
   gem 'capistrano', require: false
-  gem 'capistrano-rails', require: false
   gem 'capistrano-bundler', require: false
+  gem 'capistrano-rails', require: false
   gem 'byebug', group: :test
+  gem 'dotenv', require: false
   gem 'spring', group: :test
   gem 'web-console', group: :test
 end

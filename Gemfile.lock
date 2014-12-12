@@ -83,6 +83,7 @@ GEM
     daemons (1.1.9)
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
+    dotenv (1.0.2)
     erubis (2.7.0)
     eventmachine (1.0.3)
     globalid (0.3.0)
@@ -159,6 +160,7 @@ DEPENDENCIES
   capistrano
   capistrano-bundler
   capistrano-rails
+  dotenv
   jbuilder
   rack-cors
   rack-health
