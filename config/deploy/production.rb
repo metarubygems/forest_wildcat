@@ -17,6 +17,9 @@ server ENV['CAP_PRODUCTION_SERVER'],
        roles: %w(web)
 set :deploy_to,
     ENV['CAP_PRODUCTION_DEPLOY_TO']
+set :default_env, { path: ENV['CAP_PRODUCTION_DEFAULT_ENV'] }
+set :bundle_jobs, ENV['CAP_PRODUCTION_BUNDLE_JOBS']
+
 set :ssh_options,
 
     keys: [ENV['CAP_PRODUCTION_SSH_KEYS']],
