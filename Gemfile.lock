@@ -100,11 +100,6 @@ GEM
     rails-html-sanitizer (1.0.1)
       loofah (~> 2.0)
     rake (10.4.2)
-    rdoc (4.2.0)
-      json (~> 1.4)
-    sdoc (0.4.1)
-      json (~> 1.7, >= 1.7.7)
-      rdoc (~> 4.0)
     slop (3.6.0)
     spring (1.2.0)
     sprockets (2.12.3)
@@ -132,8 +127,7 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
-  jbuilder (~> 2.0)
+  jbuilder
   rails!
-  sdoc (~> 0.4.0)
   spring
-  web-console (~> 2.0)
+  web-console
