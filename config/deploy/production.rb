@@ -7,7 +7,6 @@
 # role :web, %w{deploy@example.com}
 # role :db,  %w{deploy@example.com}
 
-
 # Extended Server Syntax
 # ======================
 # This can be used to drop a more detailed server definition into the
@@ -19,11 +18,10 @@ server ENV['CAP_PRODUCTION_SERVER'],
 set :deploy_to,
     ENV['CAP_PRODUCTION_DEPLOY_TO']
 set :ssh_options,
-    {
-      keys: [ENV['CAP_PRODUCTION_SSH_KEYS']],
-      forward_agent: false,
-      auth_methods: %w(publickey)
-    }
+
+    keys: [ENV['CAP_PRODUCTION_SSH_KEYS']],
+    forward_agent: false,
+    auth_methods: %w(publickey)
 
 # Custom SSH Options
 # ==================
