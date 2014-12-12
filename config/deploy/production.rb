@@ -4,7 +4,6 @@
 # is considered to be the first unless any hosts have the primary
 # property set.  Don't declare `role :all`, it's a meta role.
 
-role :app, %w{ENV['CAP_PRODUCTION_SERVER']}
 # role :web, %w{deploy@example.com}
 # role :db,  %w{deploy@example.com}
 
@@ -14,14 +13,17 @@ role :app, %w{ENV['CAP_PRODUCTION_SERVER']}
 # This can be used to drop a more detailed server definition into the
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
-
-set :user, ENV['CAP_PRODUCTION_USER']
-set :deploy_to, ENV['CAP_PRODUCTION_DEPLOY_TO']
-set :ssh_options, {
-  keys: %(ENV['CAP_PRODUCTION_SSH_KEYS']),
-  forward_agent: false,
-  auth_methods: %w(publickey)
-}
+server ENV['CAP_PRODUCTION_SERVER'],
+       user: ENV['CAP_PRODUCTION_USER'],
+       roles: %w(web)
+set :deploy_to,
+    ENV['CAP_PRODUCTION_DEPLOY_TO']
+set :ssh_options,
+    {
+      keys: [ENV['CAP_PRODUCTION_SSH_KEYS']],
+      forward_agent: false,
+      auth_methods: %w(publickey)
+    }
 
 # Custom SSH Options
 # ==================
