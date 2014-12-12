@@ -1,0 +1,11 @@
+inherit_from: .rubocop_todo.yml
+AllCops:
+  Include:
+    - Gemfile
+    - lib/**/*.rake
+  Exclude:
+    - pkg/**
+    - bin/**
+    - bundle_bin/**
+StringLiterals:
+  EnforcedStyle: single_quotes
