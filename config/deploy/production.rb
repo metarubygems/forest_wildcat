@@ -17,6 +17,8 @@ role :db,  %w{deploy@example.com}
 
 server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
 
+set :deploy_to, ENV['CAP_PRODUCTION_DEPLOY_TO']
+
 
 # Custom SSH Options
 # ==================

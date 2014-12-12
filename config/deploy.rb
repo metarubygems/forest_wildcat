@@ -2,7 +2,7 @@
 lock '3.3.4'
 
 set :application, 'forest_wildcat'
-set :repo_url, 'https://github.com/metarubygems/forest_wildcat.git'
+set :repo_url, ENV['CAP_REPO_URL']
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
