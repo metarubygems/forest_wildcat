@@ -5,7 +5,7 @@ gem 'rails', '~> 4.2.0.rc'
 gem 'jbuilder'
 gem 'rack-cors', require: 'rack/cors'
 gem 'rack-health'
-gem 'thin'
+gem 'unicorn'
 
 group :development do
   gem 'capistrano', require: false
