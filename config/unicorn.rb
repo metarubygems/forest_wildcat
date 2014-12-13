@@ -8,6 +8,7 @@
 
 # FIXME: Use env and spread by capistrano
 listen 2007 # by default Unicorn listens on port 8080
+listen '/path/to/app/shared/tmp/sockets/unicorn.sock', backlog: 64
 worker_processes 2 # this should be >= nr_cpus
 pid '/path/to/app/shared/pids/unicorn.pid'
 stderr_path '/path/to/app/shared/log/unicorn.log'

@@ -14,7 +14,7 @@
 # used to set extended properties on the server.
 server ENV['CAP_PRODUCTION_SERVER'],
        user: ENV['CAP_PRODUCTION_USER'],
-       roles: %w(web)
+       roles: %w(app)
 set :deploy_to,
     ENV['CAP_PRODUCTION_DEPLOY_TO']
 set :default_env,  path: ENV['CAP_PRODUCTION_DEFAULT_ENV']
