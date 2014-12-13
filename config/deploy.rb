@@ -1,5 +1,5 @@
 # config valid only for current version of Capistrano
-lock '3.3.4'
+lock '3.3.5'
 
 set :application, 'forest_wildcat'
 set :repo_url, ENV['CAP_REPO_URL']
