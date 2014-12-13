@@ -40,11 +40,11 @@ namespace :deploy do
   desc 'Restart application'
   task :restart do
     on roles(:app) do
-      puts "restarting unicorn..."
+      puts 'restarting unicorn...'
       execute :kill, "-s QUIT $(< #{shared_path}/tmp/pids/unicorn.pid)"
       sleep 5
-      puts "whats running now, eh unicorn?"
-      execute "ps aux | grep unicorn"
+      puts 'whats running now, eh unicorn?'
+      execute 'ps aux | grep unicorn'
     end
   end
   after :publishing, :restart
