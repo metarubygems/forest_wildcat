@@ -6,6 +6,7 @@
 # See also http://unicorn.bogomips.org/examples/unicorn.conf.rb for
 # a more verbose configuration using more features.
 
+# FIXME: Use env and spread by capistrano
 listen 2007 # by default Unicorn listens on port 8080
 worker_processes 2 # this should be >= nr_cpus
 pid "/path/to/app/shared/pids/unicorn.pid"
