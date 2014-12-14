@@ -1,4 +1,6 @@
-class V1::FilesController < ApplicationController
-  def show
+module V1
+  class FilesController < ApplicationController
+    def show
+    end
   end
 end
