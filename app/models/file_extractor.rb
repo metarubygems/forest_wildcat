@@ -24,4 +24,7 @@ class FileExtractor
               with: /\A[\w_\-.\/]+\z/,
               message: 'only allows letters'
             }
+
+  class RubygemsNotFound < StandardError; end
+  class FileNotFound < StandardError; end
 end
