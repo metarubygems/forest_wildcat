@@ -1,3 +1,4 @@
+require 'open3'
 class FileExtractor
   include ActiveModel::Model
   attr_accessor :name, :version, :platform, :filename
@@ -45,5 +46,15 @@ class FileExtractor
 
   def extract
     fail RubygemsNotFound unless target_gem_file_path.file?
+    # FIXME: insecure??
+    o, e, s = Open3.capture3("tar -O -xf - data.tar.gz| tar -O -xzf - #{filename}",
+                             stdin_data: target_gem_file_path.binread,
+                             binmode: true)
+    unless s.success?
+      Rails.logger.error e
+      fail FileNotFound
+    end
+
+    o
   end
 end
