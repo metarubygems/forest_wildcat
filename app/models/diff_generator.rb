@@ -37,12 +37,12 @@ class DiffGenerator
 
   def from_gem_file_path
     Pathname.new(Rails.application.secrets.data_rubygems_dir)
-    .join('gems', from_gem_file)
+      .join('gems', from_gem_file)
   end
 
   def to_gem_file_path
     Pathname.new(Rails.application.secrets.data_rubygems_dir)
-    .join('gems', to_gem_file)
+      .join('gems', to_gem_file)
   end
 
   def generate
