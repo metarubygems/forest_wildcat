@@ -1,2 +1,4 @@
-module V1::DiffHelper
+module V1
+  module DiffHelper
+  end
 end
