@@ -1,7 +1,8 @@
 module V1
-  class DiffController < ApplicationController
+  class DiffsController < ApplicationController
     def show
       diff = DiffGenerator.new(diff_params)
+      diff.generate
     end
 
     private

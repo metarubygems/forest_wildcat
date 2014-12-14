@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   namespace :v1 do
     resource :files, only: :show
-    resource :diff, only: :show
+    resource :diffs, only: :show
   end
 
   get 'docs/hello'
