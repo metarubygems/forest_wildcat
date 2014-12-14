@@ -1,0 +1,11 @@
+## File
+$ tar -O -xf activerecord-4.1.0.gem data.tar.gz| tar -O -xzf - README.rdoc
+$ cat activerecord-4.1.0.gem | tar -O -xf - data.tar.gz| tar -O -xzf - README.rdoc
+
+## Diff
+$ cat activerecord-4.1.8.gem | tar -O -xf - data.tar.gz| tar -xzf - -C ./ar418
+$ cat activerecord-4.1.0.gem | tar -O -xf - data.tar.gz| tar -xzf - -C ./ar410
+$ diff -u ar410/ ar418/
+
+$ diff <(cat activerecord-4.1.0.gem | tar -O -xf - data.tar.gz| tar -O -xzf -) <(cat activerecord-4.1.8.gem | tar -O -xf - data.tar.gz| tar -O -xzf -)
+#=> This does not show file name(e.g. /dev/fd/63)
