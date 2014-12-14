@@ -17,7 +17,8 @@ class FileExtractor
             format: {
               with: /\A[\w_\-.]+\z/,
               message: 'only allows letters'
-            }
+            },
+            if: 'platform.present?'
   validates :filename,
             presence: true,
             format: {
