@@ -37,4 +37,13 @@ class FileExtractor
       "#{name}-#{version}.gem"
     end
   end
+
+  def target_gem_file_path
+    Pathname.new(Rails.application.secrets.data_rubygems_dir)
+      .join('gems', target_gem_file)
+  end
+
+  def extract
+    fail RubygemsNotFound unless target_gem_file_path.file?
+  end
 end
