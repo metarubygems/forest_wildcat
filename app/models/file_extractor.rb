@@ -1,25 +1,13 @@
 require 'open3'
 class FileExtractor
   include ActiveModel::Model
-  attr_accessor :name, :version, :platform, :filename
-  validates :name,
+  attr_accessor :target, :filename
+  validates :target,
             presence: true,
             format: {
               with: /\A[\w_\-.]+\z/,
               message: 'only allows letters'
             }
-  validates :version,
-            presence: true,
-            format: {
-              with: /\A[\w_\-.]+\z/,
-              message: 'only allows letters'
-            }
-  validates :platform,
-            format: {
-              with: /\A[\w_\-.]+\z/,
-              message: 'only allows letters'
-            },
-            if: 'platform.present?'
   validates :filename,
             presence: true,
             format: {
@@ -32,11 +20,7 @@ class FileExtractor
   class InvalidParameters < StandardError; end
 
   def target_gem_file
-    if platform
-      "#{name}-#{version}-#{platform}.gem"
-    else
-      "#{name}-#{version}.gem"
-    end
+    "#{target}.gem"
   end
 
   def target_gem_file_path

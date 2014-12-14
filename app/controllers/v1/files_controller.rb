@@ -9,7 +9,7 @@ module V1
     private
 
     def file_params
-      params.permit(:name, :version, :platform, :filename)
+      params.permit(:target, :filename)
     end
   end
 end
