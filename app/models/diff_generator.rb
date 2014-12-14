@@ -67,18 +67,7 @@ class DiffGenerator
           fail GeneratingError
         end
 
-        diff_command = []
-        diff_command << 'diff'
-        if format
-          diff_command << format
-        else
-          diff_command << '-u'
-        end
-        diff_command << '-r'
-        diff_command << from_dir
-        diff_command << to_dir
-
-        o, e, s = Open3.capture3(*diff_command)
+        o, e, s = Open3.capture3(*diff_command(from_dir, to_dir, format))
         # diff's exit status; 0: no diff, 1: diff exist, 2: error
         if s.exitstatus == 2
           Rails.logger.error e
@@ -87,5 +76,19 @@ class DiffGenerator
         return o
       end
     end
+  end
+
+  def diff_command(from_dir, to_dir, option)
+    command = []
+    command << 'diff'
+    if option
+      command << option
+    else
+      command << '-u'
+    end
+    command << '-r'
+    command << from_dir
+    command << to_dir
+    command
   end
 end
