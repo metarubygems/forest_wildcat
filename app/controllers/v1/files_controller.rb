@@ -3,7 +3,7 @@ module V1
     def show
       file = FileExtractor.new(file_params)
       fail FileExtractor::InvalidParameters unless file.valid?
-      file.extract
+      render plain: file.extract
     end
 
     private
