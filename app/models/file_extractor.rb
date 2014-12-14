@@ -29,4 +29,12 @@ class FileExtractor
   class RubygemsNotFound < StandardError; end
   class FileNotFound < StandardError; end
   class InvalidParameters < StandardError; end
+
+  def target_gem_file
+    if platform
+      "#{name}-#{version}-#{platform}.gem"
+    else
+      "#{name}-#{version}.gem"
+    end
+  end
 end
