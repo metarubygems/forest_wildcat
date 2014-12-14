@@ -20,4 +20,28 @@ class DiffGenerator
               message: '%{value} is not a valid format'
             },
             if: 'format.present?'
+  class RubygemsNotFound < StandardError; end
+
+  def from_gem_file
+    "#{from}.gem"
+  end
+
+  def to_gem_file
+    "#{to}.gem"
+  end
+
+  def from_gem_file_path
+    Pathname.new(Rails.application.secrets.data_rubygems_dir)
+    .join('gems', from_gem_file)
+  end
+
+  def to_gem_file_path
+    Pathname.new(Rails.application.secrets.data_rubygems_dir)
+    .join('gems', to_gem_file)
+  end
+
+  def generate
+    fail RubygemsNotFound unless from_gem_file_path.file?
+    fail RubygemsNotFound unless to_gem_file_path.file?
+  end
 end
