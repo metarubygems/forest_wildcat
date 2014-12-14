@@ -28,4 +28,5 @@ class FileExtractor
 
   class RubygemsNotFound < StandardError; end
   class FileNotFound < StandardError; end
+  class InvalidParameters < StandardError; end
 end
